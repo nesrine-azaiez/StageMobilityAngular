@@ -10,6 +10,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import {ListCandidatComponent} from './Candidat/list-candidat/list-candidat.component';
 import {HomeComponent} from "./BackEnd/home/home.component";
+import {AddCandidatComponent} from "./Candidat/add-candidat/add-candidat.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,10 +27,10 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'Home',
+        path: 'mobility',
         children: [
           {path: 'candidat', component: ListCandidatComponent},
-          // { path: 'addFormation', component: FormationComponent },
+           { path: 'addCandidat', component: AddCandidatComponent },
         ]
       },
     ]
@@ -37,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

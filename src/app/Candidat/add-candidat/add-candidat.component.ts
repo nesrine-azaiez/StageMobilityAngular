@@ -1,4 +1,4 @@
-/*
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,4 +15,4 @@ export class AddCandidatComponent implements OnInit {
 
 }
 
-*/
+

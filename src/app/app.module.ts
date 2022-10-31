@@ -23,6 +23,7 @@ import {NavbarComponent} from './BackEnd/navbar/navbar.component';
 import {SidbarComponent} from './BackEnd/sidbar/sidbar.component';
 import {FooterComponent} from './BackEnd/footer/footer.component';
 import {HomeComponent} from './BackEnd/home/home.component';
+import {AddCandidatComponent} from "./Candidat/add-candidat/add-candidat.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {HomeComponent} from './BackEnd/home/home.component';
     LayoutComponent,
     NavbarComponent,
     SidbarComponent,
-    FooterComponent
+    FooterComponent,
+    AddCandidatComponent
 
   ],
   imports: [
