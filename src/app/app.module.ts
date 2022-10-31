@@ -17,6 +17,12 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ListCandidatComponent } from './Candidat/list-candidat/list-candidat.component';
+import {DashboardComponent} from './BackEnd/dashboard/dashboard.component';
+import {LayoutComponent} from './BackEnd/layout/layout.component';
+import {NavbarComponent} from './BackEnd/navbar/navbar.component';
+import {SidbarComponent} from './BackEnd/sidbar/sidbar.component';
+import {FooterComponent} from './BackEnd/footer/footer.component';
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +34,12 @@ import { ListCandidatComponent } from './Candidat/list-candidat/list-candidat.co
     BoardModeratorComponent,
     BoardUserComponent,
     ListCandidatComponent,
+    DashboardComponent,
+    LayoutComponent,
+    NavbarComponent,
+    SidbarComponent,
+    FooterComponent
+
   ],
   imports: [
     BrowserModule,
