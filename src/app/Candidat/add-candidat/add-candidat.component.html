@@ -1,0 +1,234 @@
+<div class="app-main" id="main">
+  <!-- begin container-fluid -->
+  <div class="container-fluid">
+    <!-- begin row -->
+    <h1> Search </h1>
+
+
+    <form  (click)="SearchMultiple(key.value)">
+      <div class="from-group row">
+        <div class="col-6 col-sm-5">
+          <input class="form-control ag-row-hover" style="width: 400px;height: 50px ;font-size:large"  type="search"  #key="ngModel" ngModel
+                 name="key" placeholder="Search Courses">
+        </div>
+        <div class="col-5 col-sm-3">
+          <button class="theme-btn-border w-full" style="width: 60px" type="submit"> Search </button>
+        </div>
+      </div>
+    </form>
+
+
+
+    <br>
+
+    <div class="card-header">
+      <h3 class="card-title"> DataTable with Courses details </h3>
+      <br>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+
+      <div class="container"  >
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Id Candidat</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Genre</th>
+            <th>Date de naissance</th>
+            <th>Nationalité</th>
+            <th>Status</th>
+            <th>Type</th>
+            <th>Année</th>
+            <th>Programme</th>
+            <th>Etablissement d'Origine</th>
+            <th>Filière</th>
+            <th>Niveau</th>
+            <th>CV</th>
+            <th>Paiement</th>
+            <th>Date de candidature</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>Details</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let l of listCandidat">
+
+            <th scope="row">{{l.idCandidacy}}</th>
+
+            <td>{{l.nom}}</td>
+            <td>{{l.prenom}}</td>
+            <td>{{l.genre}}</td>
+            <td>{{l.dateN}}</td>
+            <td>{{l.nationality}}</td>
+
+            <td>{{l.status}}</td>
+            <td>{{l.type}}</td>
+            <td>{{l.annee}}</td>
+            <td>{{l.programme}}</td>
+
+            <td>{{l.etablissementOrigine}}</td>
+            <td>{{l.filiere}}</td>
+            <td>{{l.niveau}}</td>
+            <td>{{l.cv}}</td>
+            <td>{{l.paiement}}</td>
+
+            <td>{{l.dateOfCandidacy}}</td>
+            <td >
+              <button class="btn btn-outline-danger" (click)="deleteCandidacy(l.idCandidacy)">Delete</button>
+            </td>
+            <td>
+              <button  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="dataId(l.idCandidacy)" >Update</button>
+            </td>
+            <td>
+              <button class="btn btn-outline-foursquare" [routerLink]="['../details',l.idCandidacy]">Details</button>
+            </td>
+
+
+          </tr>
+
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>Id Candidat</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Genre</th>
+            <th>Date de naissance</th>
+            <th>Nationalité</th>
+            <th>Status</th>
+            <th>Type</th>
+            <th>Année</th>
+            <th>Programme</th>
+            <th>Etablissement d'Origine</th>
+            <th>Filière</th>
+            <th>Niveau</th>
+            <th>CV</th>
+            <th>Paiement</th>
+            <th>Date de candidature</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>Details</th>
+          </tr>
+          </tfoot>
+        </table>
+
+      </div>
+
+
+
+
+
+
+      <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: #00a8c6" >
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h5 class="modal-title" id="exmpleModelLabel">Edits Courses</h5>
+              <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" aria-label="Close"  >X</button>
+
+            </div>
+            <div class="modal-body" >
+              <form #f="ngForm" class="form-group">
+                <div class="input-group row-cols-md-3" >
+                  <span class="input-groupe-text "> Title </span>
+                  <input type="text" #title="ngModel" class="form-control" [(ngModel)]="cr.nom" name="title" placeholder="Nom of this Courses" pattern="[a-zA-Z]*" required  >
+                  <div *ngIf="title.invalid && title.touched" style="color: red">
+                    <div *ngIf="title.errors?.required" class="alert">
+                      Required
+                    </div>
+                    <div *ngIf="title.errors?.pattern" class="alert">
+                      title not accepted use [a-zA-Z] only
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3" >
+                  <span  class="input-groupe-text "> prenom </span>
+                  <input #prenom="ngModel" type="text" class="form-control" [(ngModel)]="cr.prenom" placeholder="prenom" name="prenom"  required>
+
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3" >
+                  <span  class="input-groupe-text "> etablissementOrigine </span>
+                  <input #etablissementOrigine="ngModel" type="text" class="form-control" [(ngModel)]="cr.etablissementOrigine" name="etablissementOrigine" placeholder="etablissementOrigine"  required>
+
+
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3">
+                  <label for="type">type</label>
+                  <select  #type="ngModel" [(ngModel)]="cr.type" name="type" id="type" class="form-control" name="type" placeholder="Position" required >
+                    <option selected value="Bizerte">Bizerte</option>
+                    <option value="Ariana">Ariana</option>
+                    <option value="Sousse">Sousse</option>
+                    <option value="Sfax">Sfax</option>
+                  </select>
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3" >
+                  <span class="input-groupe-text "> frais </span>
+                  <input #frais="ngModel" type="date" class="form-control" [(ngModel)]="cr.cv" name="frais" placeholder="Price" min="100" max="3000" required >
+
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3" >
+                  <label >annee</label>
+                  <input type="annee" class="form-control" #annee="ngModel" [(ngModel)]="cr.annee" name="dateDebut"  required >
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3" >
+                  <label >dateFin</label>
+                  <input type="date" class="form-control" #dateFin="ngModel" [(ngModel)]="cr.end" name="dateFin" required >
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3">
+                  <label for="niveau" > Level</label>
+                  <select  #niveau="ngModel" [(ngModel)]="cr.level" name="niveau" id="niveau" class="form-control"  required >
+                    <option  value="BEGINNER">BEGINNER</option>
+                    <option value="INTERMEDIATE">INTERMEDIATE</option>
+                    <option value="ADVANCED">ADVANCED</option>
+                  </select>
+                </div>
+                <br>
+                <div class="input-group row-cols-md-3">
+                  <label for="domain" >Domain</label>
+                  <select #domain="ngModel" [(ngModel)]="cr.domain" name="domain" id="domain" class="form-control"  required >
+                    <option  value="IT">IT</option>
+                    <option value="ART">ART</option>
+                    <option value="CINEMA">CINEMA</option>
+                    <option value="MUSIQUE">MUSIQUE</option>
+                    <option value="DANCE">DANCE</option>
+                    <option value="PHY">PHY</option>
+                    <option value="ECONOMIC">ECONOMIC</option>
+                    <option value="MARKETING">MARKETING</option>
+                  </select>
+                </div>
+
+                <button type="button" class="btn btn-primary"  style="float: right" data-bs-dismiss="modal" aria-label="Close" [disabled]="!f.valid" (click)="UpdateFormation(fr,idF);f.reset()" ><i class="feather icon-activity" ></i> Add </button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+      <!-- /.card-body -->
+    </div>
+
+  </div>
+</div>

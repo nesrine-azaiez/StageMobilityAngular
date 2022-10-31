@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import {Candidat} from "../../core/model/candidat";
+import {CandidatService} from "../../services/candidat-service";
 
 @Component({
   selector: 'app-add-candidat',
@@ -8,11 +10,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCandidatComponent implements OnInit {
 
-  constructor() { }
+  listCandidat: Candidat[];
 
-  ngOnInit(): void {
+  cr:Candidat=new Candidat;
+
+  constructor(private serviceCandidat: CandidatService) {
   }
 
+  ngOnInit(): void {
+    this.get();
+  }
+
+  get() {
+    return this.serviceCandidat.getCandidacy().subscribe(
+      (data: Candidat[]) => this.listCandidat = data);
+  }
+
+  SearchMultiple(key: string): void {
+    // tslint:disable-next-line:triple-equals
+    if (key == '') {
+      this.get();
+    } else if (key != null) {
+      this.serviceCandidat.SerachMultiple(key).subscribe(
+        (data: Candidat[]) => {
+          this.listCandidat = data;
+        }
+      );
+    }
+
+
+  }
+
+  deleteCandidacy(idCandidacy: number) {
+
+  }
+
+  dataId(idCandidacy: number) {
+
+  }
+
+
 }
-
-
