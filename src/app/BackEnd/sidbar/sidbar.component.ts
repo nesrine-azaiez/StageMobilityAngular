@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TokenService} from "../../CoursesSpace/services/token.service";
+
 
 @Component({
   selector: 'app-sidbar',
@@ -7,15 +7,8 @@ import {TokenService} from "../../CoursesSpace/services/token.service";
   styleUrls: ['./sidbar.component.css']
 })
 export class SidbarComponent implements OnInit {
-
-  private roles: string[];
-  isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
-  username: string;
-  currentUser: any;
-
-  constructor(private tokenStorageService: TokenService) {  this.isLoggedIn = !!this.tokenStorageService.getToken();
+  constructor() {
+/* this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     this.currentUser = this.tokenStorageService.getUser();
 
@@ -27,8 +20,10 @@ export class SidbarComponent implements OnInit {
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
       this.username = user.displayName;
-    }}
-
+    }
+    .
+    */
+    }
   ngOnInit(): void {
   }
 

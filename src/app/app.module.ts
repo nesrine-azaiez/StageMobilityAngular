@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
+
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
@@ -22,7 +22,8 @@ import {LayoutComponent} from './BackEnd/layout/layout.component';
 import {NavbarComponent} from './BackEnd/navbar/navbar.component';
 import {SidbarComponent} from './BackEnd/sidbar/sidbar.component';
 import {FooterComponent} from './BackEnd/footer/footer.component';
-// @ts-ignore
+import {HomeComponent} from './BackEnd/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,

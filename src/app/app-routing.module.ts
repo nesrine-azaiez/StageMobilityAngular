@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import {ListCandidatComponent} from './Candidat/list-candidat/list-candidat.component';
+import {HomeComponent} from "./BackEnd/home/home.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
       {
         path: 'Home',
         children: [
-          {path: 'Candidat', component: ListCandidatComponent},
+          {path: 'candidat', component: ListCandidatComponent},
           // { path: 'addFormation', component: FormationComponent },
         ]
       },

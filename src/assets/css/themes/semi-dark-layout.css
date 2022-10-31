@@ -8,11 +8,11 @@ body.semi-dark-layout {
 
 
 body.semi-dark-layout .main-menu {
-  background-color : #ffdeea;
+  background-color : #61aaff;
 }
 body.semi-dark-layout .main-menu .shadow-bottom {
-  background : -webkit-linear-gradient(top, #ffdeea 24%, #ffdeea 43%, rgba(250, 217, 247, 0.13));
-  background :         linear-gradient(180deg, #ffdeea 24%, #ffdeea 43%, rgba(160, 235, 216, 0.12));
+  background : -webkit-linear-gradient(top, #69676f 24%, #c7bed5 43%, rgba(250, 217, 247, 0.13));
+  background :         linear-gradient(180deg, #69676f 24%, #c7bed5 43%, rgba(160, 235, 216, 0.12));
 }
 body.semi-dark-layout .main-menu:not(.expanded) .navigation .sidebar-group-active a {
   background-color : rgba(255, 211, 238, 0.44);
@@ -36,7 +36,7 @@ body.semi-dark-layout .main-menu-content .navigation-main .nav-item .menu-conten
   color : black;
 }
 body.semi-dark-layout .main-menu-content .navigation-main .nav-item .menu-content li:not(.active) a {
-  background-color : #ffdeea;
+  background-color : #c7bed5;
 }
 body.semi-dark-layout .main-menu-content .navigation-main .active .menu-title, body.semi-dark-layout .main-menu-content .navigation-main .active i {
   color : white;
@@ -46,7 +46,7 @@ body.semi-dark-layout .main-menu-content .navigation-main .sidebar-group-active 
   border-radius : 4px;
 }
 body.semi-dark-layout .main-menu-content .navigation-main .sidebar-group-active .menu-content {
-  background-color : #ffdeea;
+  background-color : #c7bed5;
 }
 body.semi-dark-layout .main-menu-content .navigation-main .sidebar-group-active .menu-content .active {
   z-index : 1;
@@ -154,7 +154,7 @@ body.semi-dark-layout .header-navbar[class*='bg-'] .navbar-nav .nav-item .nav-li
 }
 
 body.semi-dark-layout.blank-page .card.bg-transparent h1, body.dark-layout.blank-page .card.bg-transparent h2, body.dark-layout.blank-page .card.bg-transparent h3, body.dark-layout.blank-page .card.bg-transparent h4, body.dark-layout.blank-page .card.bg-transparent h5, body.dark-layout.blank-page .card.bg-transparent h6 {
-  color : #ffdeea;
+  color : #c7bed5;
 }
 body.semi-dark-layout.blank-page .card.bg-transparent p {
   color : #ffdeea;
