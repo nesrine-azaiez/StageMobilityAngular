@@ -163,7 +163,7 @@
                 <br>
                 <div class="input-group row-cols-md-3">
                   <label for="type">type</label>
-                  <select  #type="ngModel" [(ngModel)]="cr.type" name="type" id="type" class="form-control" name="type" placeholder="Position" required >
+                  <select  #type="ngModel" [(ngModel)]="cr.type" name="type" id="type" class="form-control"  placeholder="Position" required >
                     <option selected value="Bizerte">Bizerte</option>
                     <option value="Ariana">Ariana</option>
                     <option value="Sousse">Sousse</option>
@@ -172,24 +172,24 @@
                 </div>
                 <br>
                 <div class="input-group row-cols-md-3" >
-                  <span class="input-groupe-text "> frais </span>
-                  <input #frais="ngModel" type="date" class="form-control" [(ngModel)]="cr.cv" name="frais" placeholder="Price" min="100" max="3000" required >
+                  <span class="input-groupe-text "> cv </span>
+                  <input #cv="ngModel" type="text" class="form-control" [(ngModel)]="cr.cv" name="cv" placeholder="cv" required >
 
                 </div>
                 <br>
                 <div class="input-group row-cols-md-3" >
                   <label >annee</label>
-                  <input type="annee" class="form-control" #annee="ngModel" [(ngModel)]="cr.annee" name="dateDebut"  required >
+                  <input type="text" class="form-control" #annee="ngModel" [(ngModel)]="cr.annee" name="dateDebut"  required >
                 </div>
                 <br>
                 <div class="input-group row-cols-md-3" >
                   <label >dateFin</label>
-                  <input type="date" class="form-control" #dateFin="ngModel" [(ngModel)]="cr.end" name="dateFin" required >
+                  <input type="text" class="form-control" #dateFin="ngModel" [(ngModel)]="cr.dateN" name="dateFin" required >
                 </div>
                 <br>
                 <div class="input-group row-cols-md-3">
-                  <label for="niveau" > Level</label>
-                  <select  #niveau="ngModel" [(ngModel)]="cr.level" name="niveau" id="niveau" class="form-control"  required >
+                  <label for="genre" > Level</label>
+                  <select  #genre="ngModel" [(ngModel)]="cr.genre" name="genre" id="genre" class="form-control"  required >
                     <option  value="BEGINNER">BEGINNER</option>
                     <option value="INTERMEDIATE">INTERMEDIATE</option>
                     <option value="ADVANCED">ADVANCED</option>
@@ -197,8 +197,8 @@
                 </div>
                 <br>
                 <div class="input-group row-cols-md-3">
-                  <label for="domain" >Domain</label>
-                  <select #domain="ngModel" [(ngModel)]="cr.domain" name="domain" id="domain" class="form-control"  required >
+                  <label for="programme" >programme</label>
+                  <select #programme="ngModel" [(ngModel)]="cr.programme" name="programme" id="programme" class="form-control"  required >
                     <option  value="IT">IT</option>
                     <option value="ART">ART</option>
                     <option value="CINEMA">CINEMA</option>
@@ -210,7 +210,7 @@
                   </select>
                 </div>
 
-                <button type="button" class="btn btn-primary"  style="float: right" data-bs-dismiss="modal" aria-label="Close" [disabled]="!f.valid" (click)="UpdateFormation(fr,idF);f.reset()" ><i class="feather icon-activity" ></i> Add </button>
+                <button type="button" class="btn btn-primary"  style="float: right" data-bs-dismiss="modal" aria-label="Close" [disabled]="!f.valid" (click)="UpdateCandidacy(cr,idC);f.reset()" ><i class="feather icon-activity" ></i> Add </button>
 
               </form>
             </div>

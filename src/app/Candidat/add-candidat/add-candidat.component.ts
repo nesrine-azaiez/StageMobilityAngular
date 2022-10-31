@@ -13,7 +13,7 @@ export class AddCandidatComponent implements OnInit {
   listCandidat: Candidat[];
 
   cr:Candidat=new Candidat;
-
+  idC : number;
   constructor(private serviceCandidat: CandidatService) {
   }
 
@@ -41,13 +41,34 @@ export class AddCandidatComponent implements OnInit {
 
   }
 
-  deleteCandidacy(idCandidacy: number) {
+  dataId(i:number)
+  {
+    console.log(i);
+    this.idC = i;
+  }
+
+
+
+  deleteCandidacy(i :number)
+  {
+   /* this.serviceCandidat.delete(i)
+      .subscribe(response => {
+
+        this.listCandidat = this.listCandidat.filter(item => item.idCandidacy !== i);
+      });
+
+    */
 
   }
 
-  dataId(idCandidacy: number) {
+
+  UpdateCandidacy(cr: Candidat, idC: number) {
+   /* this.serviceCandidat.updateCandidat(cr,idC).subscribe(
+      data=>{
+        this.get();
+      });
+
+    */
 
   }
-
-
 }
