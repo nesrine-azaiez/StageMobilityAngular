@@ -1,0 +1,78 @@
+<h1 xmlns:paginate="http://www.w3.org/1999/xhtml" xmlns:totalItems="http://www.w3.org/1999/xhtml">Liste des candidats</h1>
+
+<div>
+
+  <ng-container>
+    <form  (click)="SearchMultiple(key.value)">
+      <div class="from-group row">
+        <div class="col-6 col-sm-3">
+          <input class="form-control ag-row-hover"  type="search"  #key="ngModel" ngModel
+                 name="key" placeholder="Search Candidacy" >
+        </div>
+
+        <div class="col-6 col-sm-3">
+          <button class="btn btn-outline-soundcloud ag-row " type="submit" > Search </button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+
+<div class="container">
+  <div >
+    <div class="card-body">
+
+      <table class="table table-striped ">
+        <thead>
+        <tr>
+          <th>Id Candidat</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Genre</th>
+          <th>Date de naissance</th>
+          <th>Nationalité</th>
+          <th>Status</th>
+          <th>Type</th>
+          <th>Année</th>
+          <th>Programme</th>
+          <th>Etablissement d'Origine</th>
+          <th>Filière</th>
+          <th>Niveau</th>
+          <th>CV</th>
+          <th>Paiement</th>
+          <th>Date de candidature</th>
+
+          <th>Update</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let l of listCandidat">
+        <tr>
+          <th scope="row">{{l.idCandidacy}}</th>
+
+          <td>{{l.nom}}</td>
+          <td>{{l.prenom}}</td>
+          <td>{{l.genre}}</td>
+          <td>{{l.dateN}}</td>
+          <td>{{l.nationality}}</td>
+
+          <td>{{l.status}}</td>
+          <td>{{l.type}}</td>
+          <td>{{l.annee}}</td>
+          <td>{{l.programme}}</td>
+
+          <td>{{l.etablissementOrigine}}</td>
+          <td>{{l.filiere}}</td>
+          <td>{{l.niveau}}</td>
+          <td>{{l.cv}}</td>
+          <td>{{l.paiement}}</td>
+
+          <td>{{l.dateOfCandidacy}}</td>
+
+          <td><a class="btn btn-success" >Modifier</a></td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
